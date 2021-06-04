@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public bool rig;
+    public int antisteel;
     void Start()
     {
         
