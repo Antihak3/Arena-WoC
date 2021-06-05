@@ -63,7 +63,7 @@ public class PlayerStats : MonoBehaviour {
 
 		if (Energy < 1f)
         {
-			Energy += Time.deltaTime / 10f;
+			Energy += Time.deltaTime / 5f;
         }
 
      UIenergy.fillAmount = Energy;
