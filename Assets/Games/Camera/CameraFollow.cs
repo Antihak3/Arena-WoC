@@ -6,6 +6,8 @@ public class CameraFollow : MonoBehaviour {
 	//Variables visible in the inspector
     public float distance;
     public float height;
+	public float height2;
+
 	public float smoothness;
 	
 	public Transform camTarget;
@@ -19,7 +21,7 @@ public class CameraFollow : MonoBehaviour {
             return;
 		
 		Vector3 pos = Vector3.zero;
-		pos.x = camTarget.position.x;
+		pos.x = camTarget.position.x + height2;
 		pos.y = camTarget.position.y + height;
 		pos.z = camTarget.position.z - distance;
 		
