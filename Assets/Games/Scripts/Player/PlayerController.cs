@@ -18,18 +18,8 @@ public class PlayerController : MonoBehaviour
     public bool IsPanch2 = false;
     public Transform curTarget;
     NavMeshAgent agentt;
-    public float CD1 = 0;
-    public Button CD_icon;
-
-    public float CD2 = 0;
-    public Button CD_icon2;
-
-    public float CD3 = 0;
-    public Button CD_icon3;
-
-    public float CD4 = 0;
-    public Button CD_icon4;
-
+    public float CD1, CD2, CD3, CD4 = 0;
+    public Button CD_icon, CD_icon2, CD_icon3, CD_icon4;
     PlayerStats stats;
     Vector2 joy;
     Vector2 joy2;
@@ -83,53 +73,48 @@ public class PlayerController : MonoBehaviour
                    
                 }
 
-            CD1 -= Time.deltaTime;
-
-            CD2 -= Time.deltaTime;
-
-            CD3 -= Time.deltaTime;
-
-            CD4 -= Time.deltaTime;
+            CD1 -= Time.deltaTime;  CD2 -= Time.deltaTime;  CD3 -= Time.deltaTime;  CD4 -= Time.deltaTime;
+           
 
 
             if (CD1 > 0)
             {
-                CD_icon.gameObject.SetActive(false);
+                CD_icon.interactable = false;
 
             }
-            else if (stats.Energy > 0.2f)
+            else if (stats.Energy > 0.2f && CD1 < 0)
             {
-                CD_icon.gameObject.SetActive(true);
+                CD_icon.interactable = true;
             }
 
             if (CD2 > 0)
             {
-                CD_icon2.gameObject.SetActive(false);
+                CD_icon2.interactable = false;
 
             }
-            else if (stats.Energy > 0.4f)
+            else if (stats.Energy > 0.4f && CD2 < 0)
             {
-                CD_icon2.gameObject.SetActive(true);
+                CD_icon2.interactable = true;
             }
 
             if (CD3 > 0)
             {
-                CD_icon3.gameObject.SetActive(false);
+                CD_icon3.interactable = false;
 
             }
-            else if (stats.Energy > 0.6f)
+            else if (stats.Energy > 0.6f && CD3 < 0)
             {
-                CD_icon3.gameObject.SetActive(true);
+                CD_icon3.interactable = true;
             }
 
             if (CD4 > 0)
             {
-                CD_icon4.gameObject.SetActive(false);
+                CD_icon4.interactable = false;
 
             }
-            else if (stats.Energy > 0.9f)
+            else if (stats.Energy > 0.9f && CD4 < 0)
             {
-                CD_icon4.gameObject.SetActive(true);
+                CD_icon4.interactable = true;
             }
         }
 
@@ -291,9 +276,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator shootAttack3()
     {
         stats.Energy = stats.Energy - 0.9f;
-        CD1 = 2f;
-        CD2 = 2f;
-        CD3 = 2f;
+        CD1 = 1.5f;
+        CD2 = 1.5f;
+        CD3 = 1.5f;
         CD4 = 5f;
 
         anim.SetTrigger("attack4");

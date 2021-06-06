@@ -62,7 +62,7 @@ public class metalon : MonoBehaviour
 
         curDistance = distance;
 
-        if (20 > distance && Player.GetComponent<PlayerController>().curTarget == null)
+        if (13 > distance && Player.GetComponent<PlayerController>().curTarget == null)
         {
             Player.GetComponent<PlayerController>().curTarget = gameObject.transform;
         }

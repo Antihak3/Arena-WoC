@@ -18,9 +18,10 @@ public class main : MonoBehaviour
     }
     private void Update()
     {
-        if(Player.GetComponent<Animator>().GetBool("diedPl"))
+        if(Player.GetComponent<PlayerStats>().curLife <= 0)
         {
             StartCoroutine(DiedPlayer());
+            print("update");
         }
     }
 
@@ -35,9 +36,9 @@ public class main : MonoBehaviour
     public void PauseOn()
     {
         Time.timeScale = 0f;
-
         PauseScreen.SetActive(true);
         Screen.SetActive(true);
+        print("PaueOn");
     }
 
     public void PauseOff()
@@ -54,6 +55,10 @@ public class main : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         PauseOn();
+        print("corutine1");
         StopCoroutine(DiedPlayer());
+        print("corutine2");
     }
+
+
 }

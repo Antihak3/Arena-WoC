@@ -57,6 +57,7 @@ public class PlayerStats : MonoBehaviour {
 			anim.SetBool("diedPl", true);
 			curLife = 0;
         }
+       
 
 		if (curLife > 0 && curLife < maxLife)
 		{

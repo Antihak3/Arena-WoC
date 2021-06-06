@@ -4049,6 +4049,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3fbade09b83e6684c85f132da96a79bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6041dc253bbed79498437808853d8183, type: 3}
+--- !u!114 &426133814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8320027776774713303, guid: 9eda700dd01b41b48acd7081d4817f23,
+    type: 3}
+  m_PrefabInstance: {fileID: 2474705113757252728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &429379846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4860331694011382, guid: 5faf0b487623674489be6478c9511f39,
@@ -19617,7 +19629,7 @@ MonoBehaviour:
   stars: 0
   stars_Text: {fileID: 8854939185322278239}
   coins: 0
-  coins_Text: {fileID: 0}
+  coins_Text: {fileID: 426133814}
   Damage1: 15
   Damage2: 25
   Damage3: 50
@@ -26489,12 +26501,12 @@ MonoBehaviour:
   IsPanch2: 0
   curTarget: {fileID: 0}
   CD1: 0
-  CD_icon: {fileID: 5621673084578242349}
   CD2: 0
-  CD_icon2: {fileID: 5621673084578242349}
   CD3: 0
-  CD_icon3: {fileID: 5621673084578242349}
   CD4: 0
+  CD_icon: {fileID: 5621673084578242349}
+  CD_icon2: {fileID: 5621673084578242349}
+  CD_icon3: {fileID: 5621673084578242349}
   CD_icon4: {fileID: 5621673084578242349}
 --- !u!1 &5554846972966945113
 GameObject:

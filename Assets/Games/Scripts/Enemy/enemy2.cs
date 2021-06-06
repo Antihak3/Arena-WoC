@@ -50,7 +50,7 @@ public class enemy2 : MonoBehaviour
         float distance = Vector3.Distance(Player.transform.position, transform.position);
         curDistance = distance;
 
-        if (20 > distance && Player.GetComponent<PlayerController>().curTarget == null)
+        if (13 > distance && Player.GetComponent<PlayerController>().curTarget == null)
         {
             Player.GetComponent<PlayerController>().curTarget = gameObject.transform;
         }
