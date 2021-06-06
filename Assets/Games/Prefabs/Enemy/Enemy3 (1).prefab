@@ -4723,6 +4723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd98e68349020f46a14ecddcfcb2ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coins: {fileID: 7314362394340449439, guid: dcfd7fbd92067f847b69bb6a536a07b7, type: 3}
 --- !u!114 &6121174232615668097
 MonoBehaviour:
   m_ObjectHideFlags: 0

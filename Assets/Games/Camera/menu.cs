@@ -9,6 +9,7 @@ public class menu : MonoBehaviour
     public GameObject menuStarta;
     public GameObject menu1;
     public GameObject camera;
+    public Slider SoundVolume;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class menu : MonoBehaviour
     
     void Update()
     {
-        
+        GetComponent<AudioSource>().volume = SoundVolume.value;
     }
 
 

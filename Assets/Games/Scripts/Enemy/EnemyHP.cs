@@ -43,6 +43,7 @@ public class EnemyHP : MonoBehaviour {
     {
 		Player.GetComponent<PlayerStats>().curExp += 250;
 		Player.GetComponent<PlayerStats>().stars += 1;
+
 		spawn.GetComponent<Spawn>().SpawnEnemy();
 		Destroy(gameObject);
 	}

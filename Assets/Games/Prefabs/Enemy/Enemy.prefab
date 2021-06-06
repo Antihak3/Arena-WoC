@@ -2221,6 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd98e68349020f46a14ecddcfcb2ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coins: {fileID: 7314362394340449439, guid: dcfd7fbd92067f847b69bb6a536a07b7, type: 3}
 --- !u!114 &4858074020194319203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,10 +2234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b0f668754e3aa4398eb19b4e4b8877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceToFire: 15
+  DistanceToFire: 10
   DistanceToWalk: 30
   isFire: 0
-  DelayBetweenAnim: 1
+  DelayBetweenAnim: 2
   Player: {fileID: 0}
   curDistance: 10
   maxHP: 50
@@ -2258,7 +2259,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 15
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1

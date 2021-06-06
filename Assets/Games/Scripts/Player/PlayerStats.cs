@@ -20,6 +20,9 @@ public class PlayerStats : MonoBehaviour {
 	public int stars = 0;
 	public Text stars_Text;
 
+	public int coins = 0;
+	public Text coins_Text;
+
 	public float Damage1 = 15;
 	public float Damage2 = 20;
 	public float Damage3 = 30;
@@ -74,13 +77,17 @@ public class PlayerStats : MonoBehaviour {
 	curLifeText.text = curLife.ToString();
 	Level_Text.text = level.ToString();
 	stars_Text.text = stars.ToString();
+	coins_Text.text = coins.ToString();
 
-	if(curExp>= nextLevelExp)
+		if (curExp>= nextLevelExp)
 	    {
 		level++;
 		maxLife += 50;
 		curExp = 0;
 		nextLevelExp += 500;
+		curLife = maxLife;
+
+
 	        Damage1 *= levelDamage;
 			Damage2 *= levelDamage;
 			Damage3 *= levelDamage;

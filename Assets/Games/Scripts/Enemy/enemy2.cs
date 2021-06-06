@@ -61,15 +61,15 @@ public class enemy2 : MonoBehaviour
             {
               
                 anim.SetBool("fire", false);
-             
-                return;
                 StopCoroutine(FireAttack());
                 anim.SetBool("walk", false);
+                return;
 
             }
 
             if (distance < DistanceToFire && distance < DistanceToWalk)
             {
+                anim.SetBool("walk", false);
                 transform.LookAt(Player.transform);
                 if (!anim.GetBool("walk"))
                 {
@@ -82,22 +82,17 @@ public class enemy2 : MonoBehaviour
             }
 
 
-            if (distance < 15f)
-            {
-                anim.SetBool("walk", false);
-            }
-            else
-            {
-                anim.SetBool("fire", false);
-                anim.SetBool("walk", true);
-            }
+            
 
             if (distance < DistanceToWalk && distance > DistanceToFire)
             {
-                anim.SetBool("walk", true);
-
-                agent.SetDestination(Player.transform.position);
-                StopCoroutine(FireAttack());
+                if (!anim.GetBool("fire"))
+                {
+                    anim.SetBool("walk", true);
+                    agent.SetDestination(Player.transform.position);
+                }
+                    StopCoroutine(FireAttack());
+                
             }
 
 
@@ -122,8 +117,9 @@ public class enemy2 : MonoBehaviour
             yield return new WaitForSeconds(0.6f);
 
             gameObject.GetComponentInChildren<tochkaFiree>().Attack1();
-
+            anim.SetBool("fire", false);
             yield return new WaitForSeconds(DelayBetweenAnim);
+           
             isFire = false;
         }
     }

@@ -29,7 +29,7 @@ public class FPSCounter : MonoBehaviour
         else
         {
             _fps = (int)(_fpsArr.Sum()) / _fpsArr.Length;
-            _fpsText.text = "fps: " + _fps.ToString();
+            _fpsText.text =_fps.ToString();
             _iGlobal = 0;
         }
     }
