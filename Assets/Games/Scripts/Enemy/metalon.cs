@@ -35,14 +35,14 @@ public class metalon : MonoBehaviour
 
     public Vector3 FXdistance;
 
-    public int DamageG = 5;
+    public float DamageG = 5;
 
    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-
+        curHP = maxHP;
         Player = GameObject.FindGameObjectWithTag("Player");
         GameObject hp = Instantiate(enenmyHP, Vector3.zero, Quaternion.identity) as GameObject;
         hp.transform.SetParent(GameObject.Find("Canvas").transform);
@@ -52,7 +52,8 @@ public class metalon : MonoBehaviour
         hp.GetComponent<EnemyHP>().Enemy = gameObject;
         hp.GetComponent<EnemyHP>().offset = offset;
         HPslider = hp.GetComponent<EnemyHP>();
-       
+
+      
 }
 
 
@@ -62,10 +63,11 @@ public class metalon : MonoBehaviour
 
         curDistance = distance;
 
-        if (13 > distance && Player.GetComponent<PlayerController>().curTarget == null)
+        if (10 > distance && Player.GetComponent<PlayerController>().curTarget == null)
         {
             Player.GetComponent<PlayerController>().curTarget = gameObject.transform;
         }
+      
 
 
 

@@ -31,6 +31,7 @@ public class enemy2 : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        curHP = maxHP;
         Player = GameObject.FindGameObjectWithTag("Player");
         GameObject hp = Instantiate(enemyHP, Vector3.zero, Quaternion.identity) as GameObject;
         hp.transform.SetParent(GameObject.Find("Canvas").transform);
@@ -41,7 +42,7 @@ public class enemy2 : MonoBehaviour
         hp.GetComponentInChildren<EnemyHP>().Enemy = gameObject;
         hp.GetComponentInChildren<EnemyHP>().offset = offset;
 
-
+       
     }
 
 
@@ -50,10 +51,11 @@ public class enemy2 : MonoBehaviour
         float distance = Vector3.Distance(Player.transform.position, transform.position);
         curDistance = distance;
 
-        if (13 > distance && Player.GetComponent<PlayerController>().curTarget == null)
+        if (10 > distance && Player.GetComponent<PlayerController>().curTarget == null)
         {
             Player.GetComponent<PlayerController>().curTarget = gameObject.transform;
         }
+        
 
         if (!anim.GetBool("died"))
         {

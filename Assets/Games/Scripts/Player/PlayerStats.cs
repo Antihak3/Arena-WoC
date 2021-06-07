@@ -28,26 +28,12 @@ public class PlayerStats : MonoBehaviour {
 	public float Damage3 = 30;
 	public float Damage4 = 60;
 
-
-	public float levelDamage = 1.2f;
-
-
-
-	public GameObject fireball;
-	public GameObject[] metalon;
+	public GameObject damageEnPl;
 
 	void Start ()
 	{
 		anim = GetComponent<Animator>();
-
-		metalon[0].GetComponent<metalon>().DamageG = 10;
-		metalon[1].GetComponent<metalon>().DamageG = 10;
-		metalon[2].GetComponent<metalon>().DamageG = 10;
-		metalon[3].GetComponent<metalon>().DamageG = 10;
-		metalon[4].GetComponent<metalon>().DamageG = 10;
-
-		fireball.GetComponent<FireBallTrigger>().damage = 10;
-
+	
 
 		if (PlayerPrefs.HasKey("lvl"))
 		{
@@ -121,30 +107,14 @@ public class PlayerStats : MonoBehaviour {
 	stars_Text.text = stars.ToString();
 	coins_Text.text = coins.ToString();
 
-		if (curExp>= nextLevelExp)
-	    {
-		level++;
-		maxLife += 50;
-		curExp = 0;
-		nextLevelExp += 500;
-		curLife = maxLife;
-
-
-	        Damage1 *= levelDamage;
-			Damage2 *= levelDamage;
-			Damage3 *= levelDamage;
-			Damage4 *= levelDamage;
-
-
-
-			metalon[0].GetComponent<metalon>().DamageG += 10;
-			metalon[1].GetComponent<metalon>().DamageG += 10;
-			metalon[2].GetComponent<metalon>().DamageG += 10;
-			metalon[3].GetComponent<metalon>().DamageG += 10;
-			metalon[4].GetComponent<metalon>().DamageG += 10;
-
-
-			fireball.GetComponent<FireBallTrigger>().damage += 10;
+		if (curExp >= nextLevelExp)
+		{
+			level++;
+			maxLife += 50;
+			curExp = 0;
+			nextLevelExp += 500;
+			curLife = maxLife;
+			damageEnPl.GetComponent<DamageEnPl>().dag();
 		}
 
 	}

@@ -18,7 +18,7 @@ public class menu : MonoBehaviour
     
     void Update()
     {
-        GetComponent<AudioSource>().volume = SoundVolume.value;
+        GetComponent<AudioSource>().volume = SoundVolume.value / 10;
     }
 
 

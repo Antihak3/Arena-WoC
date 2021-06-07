@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8265145107287381371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8265145107287381373}
+  - component: {fileID: 8265145107287381372}
+  m_Layer: 0
+  m_Name: DamageHP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8265145107287381373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265145107287381371}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 146.19, y: 11.9, z: 425.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8265145107287381372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265145107287381371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32563fdb17e74d248a3396bc32222478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  fireball: {fileID: 5194608577205447454, guid: f5beda5ec4c5fcf4ab92423645f1c6bc,
+    type: 3}
+  metalon:
+  - {fileID: 6121174232615668098, guid: 8dd2b4c097dbbb24e8ffadc0ac3743b3, type: 3}
+  - {fileID: 7533484175448178571, guid: a84a024dc838d6c44bc8eff49548d921, type: 3}
+  - {fileID: 6636459001365229756, guid: 88cc9321e2fb06b46bfae774630eb8f7, type: 3}
+  - {fileID: 9126467169473149702, guid: 70105292c08b35041bdbbfd942678fca, type: 3}
+  - {fileID: 3210687258304602064, guid: 3857c90794c6a03469b9eee06a04a5fe, type: 3}
+  - {fileID: 3274436113521360707, guid: e9391f4dc41dc904c9ac867f6ce3623f, type: 3}
+  levelDamage: 1.2

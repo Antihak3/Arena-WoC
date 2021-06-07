@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Spawn : MonoBehaviour
 {
-   public bool Stage = true;
+    public bool Stage = true;
     public GameObject[] Enemy;
 
     public float Round = 100;
