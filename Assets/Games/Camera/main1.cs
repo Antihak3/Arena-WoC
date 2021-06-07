@@ -10,7 +10,7 @@ public class main1 : MonoBehaviour
     public GameObject Screen;
     public GameObject Player;
    
-
+    
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -18,6 +18,9 @@ public class main1 : MonoBehaviour
     }
     private void Update()
     {
+        
+
+
         if(Player.GetComponent<Animator>().GetBool("diedPl"))
         {
             StartCoroutine(DiedPlayer());

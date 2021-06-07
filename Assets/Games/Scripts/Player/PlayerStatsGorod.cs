@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class PlayerStats : MonoBehaviour {
+public class PlayerStatsGorod : MonoBehaviour {
 
 	public float maxLife = 100;
 	public float curLife;
-	public int level;
+	public int level = 1;
 	public float nextLevelExp = 1000;
 	public float curExp = 0;
 	public float Energy = 1f;
@@ -33,21 +33,11 @@ public class PlayerStats : MonoBehaviour {
 
 
 
-	public GameObject fireball;
-	public GameObject[] metalon;
+	
 
 	void Start ()
 	{
 		anim = GetComponent<Animator>();
-
-		metalon[0].GetComponent<metalon>().DamageG = 10;
-		metalon[1].GetComponent<metalon>().DamageG = 10;
-		metalon[2].GetComponent<metalon>().DamageG = 10;
-		metalon[3].GetComponent<metalon>().DamageG = 10;
-		metalon[4].GetComponent<metalon>().DamageG = 10;
-
-		fireball.GetComponent<FireBallTrigger>().damage = 10;
-
 
 		if (PlayerPrefs.HasKey("lvl"))
 		{
@@ -56,6 +46,15 @@ public class PlayerStats : MonoBehaviour {
 		else
 		{
 			level = 1;
+		}
+
+		if (PlayerPrefs.HasKey("stars"))
+		{
+			stars = PlayerPrefs.GetInt("stars");
+		}
+		else
+		{
+			stars = 0;
 		}
 
 		if (PlayerPrefs.HasKey("HP"))
@@ -85,13 +84,24 @@ public class PlayerStats : MonoBehaviour {
 			nextLevelExp = 1000;
 		}
 
+
 		curLife = maxLife;
+
 	}
 	
 
 	void Update () 
 	{
+		if (PlayerPrefs.HasKey("coins"))
+		{
+			coins = PlayerPrefs.GetInt("coins");
+		}
+        else
+        {
+			coins = 0;
+        }
 
+		
 
 		if (curLife < 0)
         {
@@ -117,8 +127,8 @@ public class PlayerStats : MonoBehaviour {
 	HP_Slider.fillAmount = (curLife/maxLife);
 	EXP_Slider.fillAmount = (curExp/nextLevelExp);
 	curLifeText.text = curLife.ToString();
-	Level_Text.text = level.ToString();
 	stars_Text.text = stars.ToString();
+	Level_Text.text = level.ToString();
 	coins_Text.text = coins.ToString();
 
 		if (curExp>= nextLevelExp)
@@ -137,50 +147,10 @@ public class PlayerStats : MonoBehaviour {
 
 
 
-			metalon[0].GetComponent<metalon>().DamageG += 10;
-			metalon[1].GetComponent<metalon>().DamageG += 10;
-			metalon[2].GetComponent<metalon>().DamageG += 10;
-			metalon[3].GetComponent<metalon>().DamageG += 10;
-			metalon[4].GetComponent<metalon>().DamageG += 10;
-
-
-			fireball.GetComponent<FireBallTrigger>().damage += 10;
+			
 		}
 
 	}
 
-	public int GetCoins()
-	{
-		return coins;
-	}
-
-	public int GetLevel()
-	{
-		return level;
-	}
-
-	public int Getstars()
-	{
-		return stars;
-	}
-
-	public float GetHP()
-	{
-		return maxLife;
-	}
-
-	public float GetCurHp()
-	{
-		return curLife;
-	}
-
-	public float GetEXP()
-	{
-		return curExp;
-	}
-
-	public float GetNextLvlEXP()
-	{
-		return nextLevelExp;
-	}
+	
 }

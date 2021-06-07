@@ -61,4 +61,38 @@ public class main : MonoBehaviour
     }
 
 
+    public void WinOn()
+    {
+        Time.timeScale = 0f;
+        PauseScreen.SetActive(true);
+        Screen.SetActive(true);
+        print("WinOn");
+
+        if (PlayerPrefs.HasKey("coins"))
+        {
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Player.GetComponent<PlayerStats>().GetCoins());
+        }
+        else
+        {
+            PlayerPrefs.SetInt("coins", Player.GetComponent<PlayerStats>().GetCoins());
+        }
+
+
+        if (PlayerPrefs.HasKey("stars"))
+        {
+            PlayerPrefs.SetInt("stars", PlayerPrefs.GetInt("stars") + Player.GetComponent<PlayerStats>().Getstars());
+        }
+        else
+        {
+            PlayerPrefs.SetInt("stars", Player.GetComponent<PlayerStats>().Getstars());
+        }
+
+
+
+        PlayerPrefs.SetInt("lvl", Player.GetComponent<PlayerStats>().GetLevel());
+        PlayerPrefs.SetFloat("HP", Player.GetComponent<PlayerStats>().GetHP());
+        PlayerPrefs.SetFloat("EXP", Player.GetComponent<PlayerStats>().GetEXP());
+        PlayerPrefs.SetFloat("nextLvl", Player.GetComponent<PlayerStats>().GetNextLvlEXP());
+    }
+
 }
