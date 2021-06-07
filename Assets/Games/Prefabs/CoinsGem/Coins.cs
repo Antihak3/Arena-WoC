@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-   
+  
     void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Player"))
@@ -14,4 +14,5 @@ public class Coins : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

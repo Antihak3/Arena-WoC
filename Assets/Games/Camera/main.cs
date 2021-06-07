@@ -39,6 +39,19 @@ public class main : MonoBehaviour
         PauseScreen.SetActive(true);
         Screen.SetActive(true);
         print("PaueOn");
+
+        if (PlayerPrefs.HasKey("stars"))
+        {
+            PlayerPrefs.SetInt("stars", PlayerPrefs.GetInt("stars") + Player.GetComponent<PlayerStats>().Getstars());
+        }
+        else
+        {
+            PlayerPrefs.SetInt("stars", Player.GetComponent<PlayerStats>().Getstars());
+        }
+
+        PlayerPrefs.SetInt("lvl", Player.GetComponent<PlayerStats>().GetLevel());
+        PlayerPrefs.SetFloat("EXP", Player.GetComponent<PlayerStats>().GetEXP());
+        PlayerPrefs.SetFloat("nextLvl", Player.GetComponent<PlayerStats>().GetNextLvlEXP());
     }
 
     public void PauseOff()
@@ -88,9 +101,8 @@ public class main : MonoBehaviour
         }
 
 
-
-        PlayerPrefs.SetInt("lvl", Player.GetComponent<PlayerStats>().GetLevel());
         PlayerPrefs.SetFloat("HP", Player.GetComponent<PlayerStats>().GetHP());
+        PlayerPrefs.SetInt("lvl", Player.GetComponent<PlayerStats>().GetLevel());
         PlayerPrefs.SetFloat("EXP", Player.GetComponent<PlayerStats>().GetEXP());
         PlayerPrefs.SetFloat("nextLvl", Player.GetComponent<PlayerStats>().GetNextLvlEXP());
     }

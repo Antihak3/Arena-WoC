@@ -7,9 +7,8 @@ public class Spawn : MonoBehaviour
    public bool Stage = true;
     public GameObject[] Enemy;
 
-    public float Round = 30;
+    public float Round = 100;
     public Text Round_Text;
-
 
     public GameObject TP;
 
@@ -39,7 +38,7 @@ public class Spawn : MonoBehaviour
         if (Round > 0)
         { if(Stage)
          {  StartCoroutine(SPawn1());} }   
-    }
+        }
 
     public void SpawnEnemy()
     {
@@ -51,7 +50,7 @@ public class Spawn : MonoBehaviour
         
         Stage = false;
         SpawnEnemy();
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2f);
         Stage = true;
     }
 }
