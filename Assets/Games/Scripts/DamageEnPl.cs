@@ -7,7 +7,6 @@ public class DamageEnPl : MonoBehaviour
 	public GameObject Player;
 	public GameObject fireball;
 	public GameObject[] metalon;
-	public float levelDamage = 1.2f;
 
 
 	private void Start()
@@ -18,7 +17,7 @@ public class DamageEnPl : MonoBehaviour
 		}
 		else
 		{
-			Player.GetComponent<PlayerStats>().Damage1 = 10;
+			Player.GetComponent<PlayerStats>().Damage1 = 12;
 		}
 
 		if (PlayerPrefs.HasKey("damage2"))
@@ -27,7 +26,7 @@ public class DamageEnPl : MonoBehaviour
 		}
 		else
 		{
-			Player.GetComponent<PlayerStats>().Damage2 = 25;
+			Player.GetComponent<PlayerStats>().Damage2 = 20;
 		}
 
 		if (PlayerPrefs.HasKey("damage3"))
@@ -36,7 +35,7 @@ public class DamageEnPl : MonoBehaviour
 		}
 		else
 		{
-			Player.GetComponent<PlayerStats>().Damage3 = 50;
+			Player.GetComponent<PlayerStats>().Damage3 = 30;
 		}
 
 		if (PlayerPrefs.HasKey("damage4"))
@@ -45,7 +44,7 @@ public class DamageEnPl : MonoBehaviour
 		}
 		else
 		{
-			Player.GetComponent<PlayerStats>().Damage4 = 80;
+			Player.GetComponent<PlayerStats>().Damage4 = 50;
 		}
 
 
@@ -163,25 +162,25 @@ public class DamageEnPl : MonoBehaviour
 
 	public void dag()
     {
-		Player.GetComponent<PlayerStats>().Damage1 *= levelDamage;
-		Player.GetComponent<PlayerStats>().Damage2 *= levelDamage;
-		Player.GetComponent<PlayerStats>().Damage3 *= levelDamage;
-		Player.GetComponent<PlayerStats>().Damage4 *= levelDamage;
+		Player.GetComponent<PlayerStats>().Damage1 *= 1.2f;
+		Player.GetComponent<PlayerStats>().Damage2 *= 1.2f;
+		Player.GetComponent<PlayerStats>().Damage3 *= 1.1f;
+		Player.GetComponent<PlayerStats>().Damage4 *= 1.1f;
 
 
-		metalon[0].GetComponent<metalon>().DamageG += 7;
-		metalon[1].GetComponent<metalon>().DamageG += 7;
-		metalon[2].GetComponent<metalon>().DamageG += 7;
-		metalon[3].GetComponent<metalon>().DamageG += 7;
-		metalon[4].GetComponent<metalon>().DamageG += 7;
-		fireball.GetComponent<FireBallTrigger>().damage += 7;
+		metalon[0].GetComponent<metalon>().DamageG += 5;
+		metalon[1].GetComponent<metalon>().DamageG += 5;
+		metalon[2].GetComponent<metalon>().DamageG += 5;
+		metalon[3].GetComponent<metalon>().DamageG += 5;
+		metalon[4].GetComponent<metalon>().DamageG += 5;
+		fireball.GetComponent<FireBallTrigger>().damage += 5;
 
-		metalon[0].GetComponent<metalon>().maxHP += 5;
+		metalon[0].GetComponent<metalon>().maxHP += 10;
 		metalon[1].GetComponent<metalon>().maxHP += 5;
 		metalon[2].GetComponent<metalon>().maxHP += 5;
-		metalon[3].GetComponent<metalon>().maxHP += 5;
-		metalon[4].GetComponent<metalon>().maxHP += 5;
-		metalon[5].GetComponent<enemy2>().maxHP += 5;
+		metalon[3].GetComponent<metalon>().maxHP += 15;
+		metalon[4].GetComponent<metalon>().maxHP += 15;
+		metalon[5].GetComponent<enemy2>().maxHP += 10;
 
 		PlayerPrefs.SetFloat("damage1", Player.GetComponent<PlayerStats>().Damage1);
 		PlayerPrefs.SetFloat("damage2", Player.GetComponent<PlayerStats>().Damage2);

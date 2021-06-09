@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class cameraplayerPrefs : MonoBehaviour
 {
     public Slider MusicSlider;
+    public Slider SoundSlider;
 
     private void Start()
     {
@@ -15,6 +16,14 @@ public class cameraplayerPrefs : MonoBehaviour
         }
 
         MusicSlider.value = PlayerPrefs.GetFloat("MusicVolime");
+
+
+        if (!PlayerPrefs.HasKey("SoundVolime"))
+        {
+            PlayerPrefs.SetFloat("SoundVolime", 3);
+        }
+
+        SoundSlider.value = PlayerPrefs.GetFloat("SoundVolime");
     }
     public void deleteAll()
     {
@@ -24,5 +33,6 @@ public class cameraplayerPrefs : MonoBehaviour
    public void MusicVolume()
     {
         PlayerPrefs.SetFloat("MusicVolime", MusicSlider.value);
+        PlayerPrefs.SetFloat("SoundVolime", SoundSlider.value);
     }
 }

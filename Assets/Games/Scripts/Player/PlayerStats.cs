@@ -29,6 +29,7 @@ public class PlayerStats : MonoBehaviour {
 	public float Damage4 = 60;
 
 	public GameObject damageEnPl;
+	public GameObject FXLevelUp;
 
 	void Start ()
 	{
@@ -110,15 +111,30 @@ public class PlayerStats : MonoBehaviour {
 		if (curExp >= nextLevelExp)
 		{
 			level++;
+
+			GameObject p = Instantiate(FXLevelUp, transform.position, transform.rotation) as GameObject;
+
+			p.GetComponentInChildren<ParticleSystem>().Play();
+
+			Destroy(p, p.GetComponentInChildren<ParticleSystem>().duration);
+
 			maxLife += 50;
-			curExp = 0;
+			curExp -= 500 * level;
 			nextLevelExp += 500;
 			curLife = maxLife;
 			damageEnPl.GetComponent<DamageEnPl>().dag();
+
 		}
 
 	}
 
+	IEnumerator timerApp()
+    {
+		yield return new WaitForSeconds(1);
+
+    }
+
+	
 	public int GetCoins()
 	{
 		return coins;

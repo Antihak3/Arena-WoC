@@ -23,10 +23,11 @@ public class PlayerController : MonoBehaviour
     PlayerStats stats;
     Vector2 joy;
     Vector2 joy2;
+    public soundMeneger sm;
 
     void Start()
     {
-
+        
         stats = GetComponent<PlayerStats>();
         agentt = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
@@ -158,9 +159,9 @@ public class PlayerController : MonoBehaviour
         CD4 = 0.8f;
 
         anim.SetTrigger("attack1");
-       
+        sm.PlaySound(0);
         yield return new WaitForSeconds(0.3f);
-      
+       
         transform.LookAt(curTarget);
         gameObject.GetComponentInChildren<tochkaFiree>().Attack1();
 
@@ -199,10 +200,11 @@ public class PlayerController : MonoBehaviour
         CD4 = 1.2f;
 
         anim.SetTrigger("attack2");
-
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.4f);
+        sm.PlaySound(1);
+        yield return new WaitForSeconds(0.3f);
         
-       
+
         gameObject.GetComponentInChildren<tochkaFiree>().Attack2();
 
         yield return new WaitForSeconds(0.2f);
@@ -246,12 +248,14 @@ public class PlayerController : MonoBehaviour
        
       
         gameObject.GetComponentInChildren<tochkaFiree>().UrFireBall31();
-       yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
+        sm.PlaySound(2);
+        yield return new WaitForSeconds(0.4f);
       
        
         gameObject.GetComponentInChildren<tochkaFiree>().Attack3();
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         IsPanch = false;
 
         StopCoroutine(shootAttack2());
@@ -283,12 +287,13 @@ public class PlayerController : MonoBehaviour
 
         anim.SetTrigger("attack4");
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.6f);
 
-
+        sm.PlaySound(3);
+        yield return new WaitForSeconds(0.2f);
         gameObject.GetComponentInChildren<tochkaFiree1>().Attack4();
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         IsPanch = false;
 
         StopCoroutine(shootAttack3());

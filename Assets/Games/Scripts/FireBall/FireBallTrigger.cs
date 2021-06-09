@@ -7,7 +7,7 @@ public class FireBallTrigger : MonoBehaviour {
 	public float speed;
 	public float time;
 	public GameObject Player;
-
+	public soundMeneger sm;
 	void Start()
 	{
 		Destroy(gameObject, time);
@@ -30,6 +30,7 @@ public class FireBallTrigger : MonoBehaviour {
 			col.GetComponent<PlayerStats>().curLife -= damage;
 			Destroy(gameObject);
 			print("Player");
+			sm.PlaySound(5);
 		}
 
 		if (col.CompareTag("Enemy"))

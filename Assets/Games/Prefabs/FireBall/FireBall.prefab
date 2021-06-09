@@ -111,6 +111,7 @@ MonoBehaviour:
   speed: 14.8
   time: 3
   Player: {fileID: 0}
+  sm: {fileID: 2576285968014141515, guid: a746b8c12d3b7e54890da9f1ac3f6c6d, type: 3}
 --- !u!54 &8500874045929494501
 Rigidbody:
   m_ObjectHideFlags: 0

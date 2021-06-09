@@ -37,7 +37,7 @@ public class metalon : MonoBehaviour
 
     public float DamageG = 5;
 
-   
+    public soundMeneger sm;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -140,7 +140,9 @@ public class metalon : MonoBehaviour
             isBite = true;
             anim.SetBool("bite", true);
             yield return new WaitForSeconds(bite_anim);
+            sm.PlaySound(4);
             Player.GetComponent<PlayerStats>().curLife -= DamageG;
+            sm.PlaySound(5);
             yield return new WaitForSeconds(Bite_Attack);
             anim.SetBool("bite", false);
             isBite = false;
@@ -152,6 +154,7 @@ public class metalon : MonoBehaviour
     {
         HPslider.curHP = HPslider.curHP - dmg;
         anim.SetBool("attdied", true);
+        sm.PlaySound(5);
         GameObject p = Instantiate(BodyBloodFX, transform.position + FXdistance , Quaternion.identity) as GameObject;
 
         p.GetComponent<ParticleSystem>().Play();

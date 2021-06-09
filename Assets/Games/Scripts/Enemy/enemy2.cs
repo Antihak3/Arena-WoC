@@ -25,7 +25,7 @@ public class enemy2 : MonoBehaviour
 
     public GameObject enemyHP;
     public EnemyHP HPslider;
-
+    public soundMeneger sm;
 
     void Start()
     {
@@ -115,8 +115,10 @@ public class enemy2 : MonoBehaviour
         if (!anim.GetBool("walk"))
         {
             isFire = true;
-            anim.GetComponent<Animator>().SetBool("fire", true);
-            yield return new WaitForSeconds(0.6f);
+            anim.GetComponent<Animator>().SetBool("fire", true); 
+            yield return new WaitForSeconds(0.3f);
+            sm.PlaySound(4);
+            yield return new WaitForSeconds(0.3f);
 
             gameObject.GetComponentInChildren<tochkaFiree>().Attack1();
             anim.SetBool("fire", false);
@@ -130,6 +132,7 @@ public class enemy2 : MonoBehaviour
     public void Damage(float dmg)
     {
         HPslider.curHP = HPslider.curHP - dmg;
+        sm.PlaySound(5);
     }
 
 

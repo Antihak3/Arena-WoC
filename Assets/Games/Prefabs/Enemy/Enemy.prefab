@@ -2245,6 +2245,7 @@ MonoBehaviour:
   offset: {x: 0, y: 4, z: 0}
   enemyHP: {fileID: 8966033209752433228, guid: fd540ae19d3a18c4a807d9110e404cc3, type: 3}
   HPslider: {fileID: 0}
+  sm: {fileID: 2576285968014141515, guid: a746b8c12d3b7e54890da9f1ac3f6c6d, type: 3}
 --- !u!195 &2805863799665619822
 NavMeshAgent:
   m_ObjectHideFlags: 0

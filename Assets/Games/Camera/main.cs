@@ -40,6 +40,15 @@ public class main : MonoBehaviour
         Screen.SetActive(true);
         print("PaueOn");
 
+        if (PlayerPrefs.HasKey("coins"))
+        {
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Player.GetComponent<PlayerStats>().GetCoins());
+        }
+        else
+        {
+            PlayerPrefs.SetInt("coins", Player.GetComponent<PlayerStats>().GetCoins());
+        }
+
         if (PlayerPrefs.HasKey("stars"))
         {
             PlayerPrefs.SetInt("stars", PlayerPrefs.GetInt("stars") + Player.GetComponent<PlayerStats>().Getstars());
@@ -49,6 +58,7 @@ public class main : MonoBehaviour
             PlayerPrefs.SetInt("stars", Player.GetComponent<PlayerStats>().Getstars());
         }
 
+        PlayerPrefs.SetFloat("HP", Player.GetComponent<PlayerStats>().GetHP());
         PlayerPrefs.SetInt("lvl", Player.GetComponent<PlayerStats>().GetLevel());
         PlayerPrefs.SetFloat("EXP", Player.GetComponent<PlayerStats>().GetEXP());
         PlayerPrefs.SetFloat("nextLvl", Player.GetComponent<PlayerStats>().GetNextLvlEXP());

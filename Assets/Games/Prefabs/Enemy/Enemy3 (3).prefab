@@ -3108,6 +3108,7 @@ MonoBehaviour:
     type: 3}
   FXdistance: {x: 0, y: 1, z: 0}
   DamageG: 45
+  sm: {fileID: 2576285968014141515, guid: a746b8c12d3b7e54890da9f1ac3f6c6d, type: 3}
 --- !u!1 &6636459001368665236
 GameObject:
   m_ObjectHideFlags: 0
